@@ -22,11 +22,11 @@ describe('Webpack integration test', () => {
     expect(files).toContain('scripts.js')
   })
 
-  it('hashes module IDs', () => {
+  it('creates hashed module IDs', () => {
     const ids = result.stats.compilation.modules.map((m) => m.id)
 
-    expect(ids).toContain('8fdc1f') // fixtures/module-a.js
-    expect(ids).toContain('9a26be') // fixtures/module-b.js
-    expect(ids).toContain('b063c2') // fixtures/entry-point.js
+    expect(ids).toContain('8fdc1fe3') // fixtures/module-a.js
+    expect(ids).toContain('9a26bed4') // fixtures/module-b.js
+    expect(ids).toContain('b063c2c3') // fixtures/entry-point.js
   })
 })

@@ -2,9 +2,10 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/reliable-module-ids-plugin/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin.svg?branch=master)](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin) [![npm version](https://img.shields.io/npm/v/reliable-module-ids-plugin.svg?style=flat)](https://www.npmjs.com/package/reliable-module-ids-plugin) [![Greenkeeper badge](https://badges.greenkeeper.io/i-like-robots/reliable-module-ids-plugin.svg)](https://greenkeeper.io/)
 
-This [Webpack] plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds.
+This [Webpack] plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds. It is intended to bridge the gap between Webpack 4 and the [deterministic IDs] feature coming in Webpack 5.
 
 [Webpack]: https://webpack.js.org/
+[deterministic IDs]: https://github.com/webpack/changelog-v5#deterministic-chunk-and-module-ids
 
 
 ## Installation
@@ -32,12 +33,13 @@ module.exports = {
 }
 ```
 
-If you have already configured `optimization.moduleIds` you should set this to `false` so that Webpack knows a custom algorithm is being provided.
+If you have already configured [`optimization.moduleIds`][optimization] you should set this to `false` so Webpack will defer to the provided algorithm.
 
 [Node.js]: https://nodejs.org/
 [npm]: http://npmjs.com/
 [npm install]: https://docs.npmjs.com/getting-started/installing-npm-packages-locally
 [plugins]: https://webpack.js.org/configuration/plugins/
+[optimization]: https://webpack.js.org/configuration/optimization/#optimizationmoduleids
 
 
 ## Options
@@ -52,7 +54,7 @@ The encoding to use when generating the hash, defaults to `'hex'`. All encodings
 
 ### `hashDigestLength`
 
-The prefix length of the hash digest to use, defaults to `6`. Note that some generated IDs might be longer than specified here, to avoid module ID collisions.
+The prefix length of the hash digest to use, defaults to `8`. Note that some generated IDs might be longer than specified here, to avoid module ID collisions.
 
 [createHash]: https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm_options
 [digest]: https://nodejs.org/api/crypto.html#crypto_hash_digest_encoding

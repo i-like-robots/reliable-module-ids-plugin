@@ -13,7 +13,7 @@ class ReliableModuleIdsPlugin {
       {
         hashFunction: 'md5',
         hashDigest: 'hex',
-        hashDigestLength: 6
+        hashDigestLength: 8
       },
       options
     )
@@ -26,15 +26,14 @@ class ReliableModuleIdsPlugin {
       compilation.hooks.beforeModuleIds.tap(PluginName, (modules) => {
         modules.forEach((module) => {
           if (module.id === null && module.libIdent) {
-            // This returns the path from the project root to the original module/s.
+            // This returns the relative path from the project root to the original module/s.
             // By default Webpack uses this as the module's ID in development mode.
             let id = module.libIdent({
               context: compiler.options.context
             })
 
-            // Because npm install is not idempotent paths to packages can change
-            // between installs. To counter this we'll take only the rightmost
-            // node modules part rather than the full path.
+            // Because npm install is not idempotent paths to packages can change between installs.
+            // To mitigate this we'll take the deepest node modules path rather than the full path.
             if (id.includes('node_modules')) {
               id = id.slice(id.lastIndexOf('node_modules'))
             }
@@ -45,8 +44,8 @@ class ReliableModuleIdsPlugin {
 
             const hashId = hash.digest(this.options.hashDigest)
 
-            // Because we're shortening IDs we may sometimes create duplicate IDs.
-            // To avoid this we'll use Webpack's strategy of incrementing the length.
+            // Because we're shortening IDs there is a (low) risk we might create duplicate IDs.
+            // To avoid this we'll use Webpack's strategy of incrementing the length on collisions.
             let hashLength = this.options.hashDigestLength
 
             while (usedIds.has(hashId.substr(0, hashLength))) {
