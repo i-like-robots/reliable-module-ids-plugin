@@ -1,0 +1,32 @@
+{
+  "name": "simple-hashed-module-ids-plugin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/plugin.js",
+  "scripts": {
+    "lint": "prettier --config .prettierrc.json --list-different src/*.js",
+    "test": "npm run lint && jasmine test/*.test.js"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "keywords": [
+    "webpack",
+    "plugin"
+  ],
+  "devDependencies": {
+    "jasmine": "^3.4.0",
+    "prettier": "^1.18.2",
+    "webpack": "^4.39.2"
+  },
+  "peerDependencies": {
+    "webpack": "^4.38.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:i-like-robots/simple-hashed-module-ids-plugin.git"
+  },
+  "homepage": "https://github.com/i-like-robots/simple-hashed-module-ids-plugin",
+  "author": "Matt Hinchliffe",
+  "license": "MIT"
+}
