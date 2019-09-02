@@ -24,9 +24,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:i-like-robots/simple-hashed-module-ids-plugin.git"
+    "url": "git@github.com:i-like-robots/reliable-module-ids-plugin.git"
   },
-  "homepage": "https://github.com/i-like-robots/simple-hashed-module-ids-plugin",
+  "homepage": "https://github.com/i-like-robots/reliable-module-ids-plugin",
   "author": "Matt Hinchliffe",
   "license": "MIT"
 }
