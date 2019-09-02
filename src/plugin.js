@@ -5,9 +5,9 @@
 // <https://itnext.io/it-works-on-my-machine-b712fd532670>
 const createHash = require('webpack/lib/util/createHash')
 
-const PluginName = 'SimpleHashedModuleIdsPlugin'
+const PluginName = 'ReliableModuleIdsPlugin'
 
-class SimpleHashedModuleIdsPlugin {
+class ReliableModuleIdsPlugin {
   constructor(options) {
     this.options = Object.assign(
       {
@@ -61,4 +61,4 @@ class SimpleHashedModuleIdsPlugin {
   }
 }
 
-module.exports = SimpleHashedModuleIdsPlugin
+module.exports = ReliableModuleIdsPlugin
