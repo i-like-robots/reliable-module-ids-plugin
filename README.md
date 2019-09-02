@@ -1,6 +1,6 @@
 # Reliable Module IDs Plugin
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/reliable-module-ids-plugin/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin.svg?branch=master)](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin) [![npm version](https://img.shields.io/npm/v/reliable-module-ids-plugin.svg?style=flat)](https://www.npmjs.com/package/reliable-module-ids-plugin)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/reliable-module-ids-plugin/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin.svg?branch=master)](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin) [![npm version](https://img.shields.io/npm/v/reliable-module-ids-plugin.svg?style=flat)](https://www.npmjs.com/package/reliable-module-ids-plugin) [![Greenkeeper badge](https://badges.greenkeeper.io/i-like-robots/reliable-module-ids-plugin.svg)](https://greenkeeper.io/)
 
 This [Webpack] plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds.
 
