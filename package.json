@@ -1,7 +1,7 @@
 {
   "name": "reliable-module-ids-plugin",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "This Webpack plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds.",
   "main": "src/plugin.js",
   "scripts": {
     "lint": "prettier --config .prettierrc.json --list-different src/*.js",
