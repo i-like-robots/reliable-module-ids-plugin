@@ -16,7 +16,7 @@
   ],
   "devDependencies": {
     "jasmine": "^3.4.0",
-    "prettier": "^2.0.0",
+    "prettier": "^2.0.4",
     "webpack": "^4.39.2"
   },
   "peerDependencies": {
