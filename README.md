@@ -2,9 +2,9 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/i-like-robots/reliable-module-ids-plugin/blob/master/LICENSE) [![Build Status](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin.svg?branch=master)](https://travis-ci.org/i-like-robots/reliable-module-ids-plugin) [![npm version](https://img.shields.io/npm/v/reliable-module-ids-plugin.svg?style=flat)](https://www.npmjs.com/package/reliable-module-ids-plugin) [![Greenkeeper badge](https://badges.greenkeeper.io/i-like-robots/reliable-module-ids-plugin.svg)](https://greenkeeper.io/)
 
-This [Webpack] plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds. It is intended to bridge the gap between Webpack 4 and the [deterministic IDs] feature coming in Webpack 5.
+This [Webpack 4] plugin provides more reliable module IDs for improved long-term caching and code reuse between project installations and builds. It is intended to bridge the gap until we can use the [deterministic IDs] feature in Webpack 5.
 
-[Webpack]: https://webpack.js.org/
+[Webpack 4]: https://webpack.js.org/
 [deterministic IDs]: https://github.com/webpack/changelog-v5#deterministic-chunk-and-module-ids
 
 
@@ -58,6 +58,11 @@ The prefix length of the hash digest to use, defaults to `8`. Note that some gen
 
 [createHash]: https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm_options
 [digest]: https://nodejs.org/api/crypto.html#crypto_hash_digest_encoding
+
+
+## Motivation
+
+Module IDs play an important part in Webpack's content hashing algorithm. For the assets we compile with Webpack to be long-term cacheable and consistent over time we need to ensure the module ID algorithm is deterministic. By default Webpack will use numerical module IDs when run in production mode but because these IDs are assigned incrementally in the order that modules are added to the [dependency graph](https://webpack.js.org/concepts/dependency-graph/) these will naturally change over time. Webpack already provides alternatives for this; `named` which is the module's path relative to the project root and `hashed` which is a hash of this path, however if you use npm then these module paths are not deterministic and can change over time and between environments.
 
 
 ##  Prior Art
